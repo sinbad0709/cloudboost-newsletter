@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudBoost Industry Digest - {{date currentDate "MMMM YYYY"}}</title>
-    <meta property="og:title" content="CloudBoost Industry Digest - {{date currentDate "MMMM YYYY"}}" />
-    <meta property="og:description" content="Stay updated with the latest in Unified Communications, Collaboration, and Contact Center technology." />
-    <meta property="og:image" content="{{logoUrl}}" />
+    <title>CloudBoost Industry Digest</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&family=PT+Serif&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
@@ -82,56 +79,20 @@
     <main>
         <section class="mb-8">
             <h2 class="category-header">Unified Communications</h2>
-            {{#each topArticles.unifiedComm}}
-            <article class="card">
-                <h3 class="text-lg font-bold mb-2">{{title}}</h3>
-                <div class="flex justify-between items-center mb-3">
-                    <span class="meta">{{date date "MMM D, YYYY"}}</span>
-                    <span class="significance-badge" style="background-color: {{#if (gte significance 8)}}#478559{{else if (gte significance 5)}}#39a0ca{{else}}#666666{{/if}}">
-                        Impact: {{significance}}/10
-                    </span>
-                </div>
-                <p class="mb-3">{{summary}}</p>
-                <a href="{{url}}" class="text-blue hover:underline">Read More →</a>
-            </article>
-            {{/each}}
-            <p class="meta">{{#unless topArticles.unifiedComm}}No updates from the past 7 days.{{/unless}}</p>
+            {{{formattedArticles.unifiedComm}}}
+            <p class="meta">No updates from the past 7 days.</p>
         </section>
 
         <section class="mb-8">
             <h2 class="category-header">Collaboration</h2>
-            {{#each topArticles.collaboration}}
-            <article class="card">
-                <h3 class="text-lg font-bold mb-2">{{title}}</h3>
-                <div class="flex justify-between items-center mb-3">
-                    <span class="meta">{{date date "MMM D, YYYY"}}</span>
-                    <span class="significance-badge" style="background-color: {{#if (gte significance 8)}}#478559{{else if (gte significance 5)}}#39a0ca{{else}}#666666{{/if}}">
-                        Impact: {{significance}}/10
-                    </span>
-                </div>
-                <p class="mb-3">{{summary}}</p>
-                <a href="{{url}}" class="text-blue hover:underline">Read More →</a>
-            </article>
-            {{/each}}
-            <p class="meta">{{#unless topArticles.collaboration}}No updates from the past 7 days.{{/unless}}</p>
+            {{{formattedArticles.collaboration}}}
+            <p class="meta">No updates from the past 7 days.</p>
         </section>
 
         <section class="mb-8">
             <h2 class="category-header">Contact Centre</h2>
-            {{#each topArticles.contactCenter}}
-            <article class="card">
-                <h3 class="text-lg font-bold mb-2">{{title}}</h3>
-                <div class="flex justify-between items-center mb-3">
-                    <span class="meta">{{date date "MMM D, YYYY"}}</span>
-                    <span class="significance-badge" style="background-color: {{#if (gte significance 8)}}#478559{{else if (gte significance 5)}}#39a0ca{{else}}#666666{{/if}}">
-                        Impact: {{significance}}/10
-                    </span>
-                </div>
-                <p class="mb-3">{{summary}}</p>
-                <a href="{{url}}" class="text-blue hover:underline">Read More →</a>
-            </article>
-            {{/each}}
-            <p class="meta">{{#unless topArticles.contactCenter}}No updates from the past 7 days.{{/unless}}</p>
+            {{{formattedArticles.contactCenter}}}
+            <p class="meta">No updates from the past 7 days.</p>
         </section>
     </main>
 </body>
