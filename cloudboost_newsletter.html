@@ -82,7 +82,7 @@
     <main>
         <section class="mb-8">
             <h2 class="category-header">Unified Communications</h2>
-            {{#if topArticles.unifiedComm.@length}}
+            {{#if topArticles.unifiedComm}}
                 {{#each topArticles.unifiedComm}}
                 <article class="card">
                     <h3 class="text-lg font-bold mb-2">{{title}}</h3>
@@ -103,7 +103,7 @@
 
         <section class="mb-8">
             <h2 class="category-header">Collaboration</h2>
-            {{#if topArticles.collaboration.@length}}
+            {{#if topArticles.collaboration}}
                 {{#each topArticles.collaboration}}
                 <article class="card">
                     <h3 class="text-lg font-bold mb-2">{{title}}</h3>
@@ -124,7 +124,7 @@
 
         <section class="mb-8">
             <h2 class="category-header">Contact Centre</h2>
-            {{#if topArticles.contactCenter.@length}}
+            {{#if topArticles.contactCenter}}
                 {{#each topArticles.contactCenter}}
                 <article class="card">
                     <h3 class="text-lg font-bold mb-2">{{title}}</h3>
