@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudBoost Industry Digest - {{date currentDate "MMMM YYYY"}}</title>
+    <meta property="og:title" content="CloudBoost Industry Digest - {{date currentDate "MMMM YYYY"}}" />
+    <meta property="og:description" content="Stay updated with the latest in Unified Communications, Collaboration, and Contact Center technology." />
+    <meta property="og:image" content="{{logoUrl}}" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&family=PT+Serif&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <script src="https://cdn.tailwindcss.com?plugins=aspect-ratio"></script>
+    
+    <script>
+        tailwind.config = {
+            corePlugins: { container: false },
+            theme: {
+                colors: {
+                    purple: '#161748',
+                    blue: '#669ECF',
+                    green: '#478559',
+                    pink: '#f95d9b',
+                    gray: {
+                        100: '#f8f9fa',
+                        200: '#e9ecef',
+                        300: '#dee2e6',
+                        600: '#666666',
+                        800: '#2a2a2a'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        
+        html {
+            -webkit-print-color-adjust: exact;
+        }
+
+        body {
+            font-family: 'PT Serif', Georgia, serif;
+            color: #2a2a2a;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            color: #161748;
+            margin: 0;
+        }
+
+        .category-header {
+            background-color: #669ECF;
+            color: white;
+            padding: 1rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            position: relative;
+            background: white;
+            border-radius: 0.25rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+<body class="p-4">
+    <main>
+        <section class="mb-8">
+            <h2 class="category-header">Unified Communications</h2>
+            {{#if topArticles.unifiedComm.length}}
+                {{#each topArticles.unifiedComm}}
+                <article class="card">
+                    <h3 class="text-lg font-bold mb-2">{{title}}</h3>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="meta">{{date date "MMM D, YYYY"}}</span>
+                        <span class="significance-badge" style="background-color: {{#if (gte significance 8)}}#478559{{else if (gte significance 5)}}#39a0ca{{else}}#666666{{/if}}">
+                            Impact: {{significance}}/10
+                        </span>
+                    </div>
+                    <p class="mb-3">{{summary}}</p>
+                    <a href="{{url}}" class="text-blue hover:underline">Read More →</a>
+                </article>
+                {{/each}}
+            {{else}}
+                <p class="meta">No updates from the past 7 days.</p>
+            {{/if}}
+        </section>
+
+        <section class="mb-8">
+            <h2 class="category-header">Collaboration</h2>
+            {{#if topArticles.collaboration.length}}
+                {{#each topArticles.collaboration}}
+                <article class="card">
+                    <h3 class="text-lg font-bold mb-2">{{title}}</h3>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="meta">{{date date "MMM D, YYYY"}}</span>
+                        <span class="significance-badge" style="background-color: {{#if (gte significance 8)}}#478559{{else if (gte significance 5)}}#39a0ca{{else}}#666666{{/if}}">
+                            Impact: {{significance}}/10
+                        </span>
+                    </div>
+                    <p class="mb-3">{{summary}}</p>
+                    <a href="{{url}}" class="text-blue hover:underline">Read More →</a>
+                </article>
+                {{/each}}
+            {{else}}
+                <p class="meta">No updates from the past 7 days.</p>
+            {{/if}}
+        </section>
+
+        <section class="mb-8">
+            <h2 class="category-header">Contact Centre</h2>
+            {{#if topArticles.contactCenter.length}}
+                {{#each topArticles.contactCenter}}
+                <article class="card">
+                    <h3 class="text-lg font-bold mb-2">{{title}}</h3>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="meta">{{date date "MMM D, YYYY"}}</span>
+                        <span class="significance-badge" style="background-color: {{#if (gte significance 8)}}#478559{{else if (gte significance 5)}}#39a0ca{{else}}#666666{{/if}}">
+                            Impact: {{significance}}/10
+                        </span>
+                    </div>
+                    <p class="mb-3">{{summary}}</p>
+                    <a href="{{url}}" class="text-blue hover:underline">Read More →</a>
+                </article>
+                {{/each}}
+            {{else}}
+                <p class="meta">No updates from the past 7 days.</p>
+            {{/if}}
+        </section>
+    </main>
+</body>
+</html>
