@@ -82,65 +82,56 @@
     <main>
         <section class="mb-8">
             <h2 class="category-header">Unified Communications</h2>
-            {{#if topArticles.unifiedComm}}
-                {{#each topArticles.unifiedComm}}
-                <article class="card">
-                    <h3 class="text-lg font-bold mb-2">{{title}}</h3>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="meta">{{date date "MMM D, YYYY"}}</span>
-                        <span class="significance-badge" style="background-color: {{#if (gte significance 8)}}#478559{{else if (gte significance 5)}}#39a0ca{{else}}#666666{{/if}}">
-                            Impact: {{significance}}/10
-                        </span>
-                    </div>
-                    <p class="mb-3">{{summary}}</p>
-                    <a href="{{url}}" class="text-blue hover:underline">Read More →</a>
-                </article>
-                {{/each}}
-            {{else}}
-                <p class="meta">No updates from the past 7 days.</p>
-            {{/if}}
+            {{#each topArticles.unifiedComm}}
+            <article class="card">
+                <h3 class="text-lg font-bold mb-2">{{title}}</h3>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="meta">{{date date "MMM D, YYYY"}}</span>
+                    <span class="significance-badge" style="background-color: {{#if (gte significance 8)}}#478559{{else if (gte significance 5)}}#39a0ca{{else}}#666666{{/if}}">
+                        Impact: {{significance}}/10
+                    </span>
+                </div>
+                <p class="mb-3">{{summary}}</p>
+                <a href="{{url}}" class="text-blue hover:underline">Read More →</a>
+            </article>
+            {{/each}}
+            <p class="meta">{{#unless topArticles.unifiedComm}}No updates from the past 7 days.{{/unless}}</p>
         </section>
 
         <section class="mb-8">
             <h2 class="category-header">Collaboration</h2>
-            {{#if topArticles.collaboration}}
-                {{#each topArticles.collaboration}}
-                <article class="card">
-                    <h3 class="text-lg font-bold mb-2">{{title}}</h3>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="meta">{{date date "MMM D, YYYY"}}</span>
-                        <span class="significance-badge" style="background-color: {{#if (gte significance 8)}}#478559{{else if (gte significance 5)}}#39a0ca{{else}}#666666{{/if}}">
-                            Impact: {{significance}}/10
-                        </span>
-                    </div>
-                    <p class="mb-3">{{summary}}</p>
-                    <a href="{{url}}" class="text-blue hover:underline">Read More →</a>
-                </article>
-                {{/each}}
-            {{else}}
-                <p class="meta">No updates from the past 7 days.</p>
-            {{/if}}
+            {{#each topArticles.collaboration}}
+            <article class="card">
+                <h3 class="text-lg font-bold mb-2">{{title}}</h3>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="meta">{{date date "MMM D, YYYY"}}</span>
+                    <span class="significance-badge" style="background-color: {{#if (gte significance 8)}}#478559{{else if (gte significance 5)}}#39a0ca{{else}}#666666{{/if}}">
+                        Impact: {{significance}}/10
+                    </span>
+                </div>
+                <p class="mb-3">{{summary}}</p>
+                <a href="{{url}}" class="text-blue hover:underline">Read More →</a>
+            </article>
+            {{/each}}
+            <p class="meta">{{#unless topArticles.collaboration}}No updates from the past 7 days.{{/unless}}</p>
         </section>
 
         <section class="mb-8">
             <h2 class="category-header">Contact Centre</h2>
-            {{#if topArticles.contactCenter}}
-                {{#each topArticles.contactCenter}}
-                <article class="card">
-                    <h3 class="text-lg font-bold mb-2">{{title}}</h3>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="meta">{{date date "MMM D, YYYY"}}</span>
-                        <span class="significance-badge" style="background-color: {{#if (gte significance 8)}}#478559{{else if (gte significance 5)}}#39a0ca{{else}}#666666{{/if}}">
-                            Impact: {{significance}}/10
-                        </span>
-                    </div>
-                    <p class="mb-3">{{summary}}</p>
-                    <a href="{{url}}" class="text-blue hover:underline">Read More →</a>
-                </article>
-                {{/each}}
-            {{else}}
-                <p class="meta">No updates from the past 7 days.</p>
-            {{/if}}
+            {{#each topArticles.contactCenter}}
+            <article class="card">
+                <h3 class="text-lg font-bold mb-2">{{title}}</h3>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="meta">{{date date "MMM D, YYYY"}}</span>
+                    <span class="significance-badge" style="background-color: {{#if (gte significance 8)}}#478559{{else if (gte significance 5)}}#39a0ca{{else}}#666666{{/if}}">
+                        Impact: {{significance}}/10
+                    </span>
+                </div>
+                <p class="mb-3">{{summary}}</p>
+                <a href="{{url}}" class="text-blue hover:underline">Read More →</a>
+            </article>
+            {{/each}}
+            <p class="meta">{{#unless topArticles.contactCenter}}No updates from the past 7 days.{{/unless}}</p>
         </section>
     </main>
 </body>
