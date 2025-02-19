@@ -80,29 +80,14 @@
 </head>
 <body class="p-4">
     <main>
-        <section class="mb-8">
-            <h2 class="category-header">Unified Communications</h2>
-            {{{formattedArticles.unifiedComm}}}
-            {{#unless formattedArticles.unifiedComm}}
-                <p class="meta">No updates from the past 7 days.</p>
-            {{/unless}}
-        </section>
+    <section class="mb-8">
+        <h2 class="category-header">Industry Insight</h2>
+        <p>{{weeklyInsight}}</p>
+    </section>
 
-        <section class="mb-8">
-            <h2 class="category-header">Collaboration</h2>
-            {{{formattedArticles.collaboration}}}
-            {{#unless formattedArticles.collaboration}}
-                <p class="meta">No updates from the past 7 days.</p>
-            {{/unless}}
-        </section>
+    {{{formattedArticles}}}  <!-- Inserts properly formatted articles -->
+</main>
 
-        <section class="mb-8">
-            <h2 class="category-header">Contact Centre</h2>
-            {{{formattedArticles.contactCenter}}}
-            {{#unless formattedArticles.contactCenter}}
-                <p class="meta">No updates from the past 7 days.</p>
-            {{/unless}}
-        </section>
-    </main>
+
 </body>
 </html>
