@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudBoost Industry Digest</title>
+    <title>CloudBoost Industry Digest - {{date currentDate "MMMM YYYY"}}</title>
+    <meta property="og:title" content="CloudBoost Industry Digest - {{date currentDate "MMMM YYYY"}}" />
+    <meta property="og:description" content="Stay updated with the latest in Unified Communications, Collaboration, and Contact Center technology." />
+    <meta property="og:image" content="{{logoUrl}}" />
     
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;800&family=PT+Serif&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
@@ -79,26 +82,26 @@
     <main>
         <section class="mb-8">
             <h2 class="category-header">Unified Communications</h2>
-            <div id="uc-articles">
-                {{formattedArticles.unifiedComm}}
-            </div>
-            <p class="meta">No updates from the past 7 days.</p>
+            {{{topArticles.unifiedComm}}}
+            {{#unless topArticles.unifiedComm}}
+                <p class="meta">No updates from the past 7 days.</p>
+            {{/unless}}
         </section>
 
         <section class="mb-8">
             <h2 class="category-header">Collaboration</h2>
-            <div id="collaboration-articles">
-                {{formattedArticles.collaboration}}
-            </div>
-            <p class="meta">No updates from the past 7 days.</p>
+            {{{topArticles.collaboration}}}
+            {{#unless topArticles.collaboration}}
+                <p class="meta">No updates from the past 7 days.</p>
+            {{/unless}}
         </section>
 
         <section class="mb-8">
             <h2 class="category-header">Contact Centre</h2>
-            <div id="contact-center-articles">
-                {{formattedArticles.contactCenter}}
-            </div>
-            <p class="meta">No updates from the past 7 days.</p>
+            {{{topArticles.contactCenter}}}
+            {{#unless topArticles.contactCenter}}
+                <p class="meta">No updates from the past 7 days.</p>
+            {{/unless}}
         </section>
     </main>
 </body>
